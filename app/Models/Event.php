@@ -7,4 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+
+    /**
+     * Get all of the workshops for the Event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function workshops()
+    {
+        return $this->hasMany(Workshop::class, 'event_id');
+    }
+
 }
